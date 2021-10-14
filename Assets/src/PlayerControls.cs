@@ -10,13 +10,8 @@ public class PlayerControls : MonoBehaviour
     private Collider2D col;
 
     [SerializeField] private int speed = 5;
-    private readonly int STARTING_JUMP_POWER = 2;
-    private readonly int FINAL_JUMP_POWER = 6;
-    [SerializeField] private float jumpPower = 3;
+    [SerializeField]private float jumpPower = 5;
     private float distToGround;
-
-    private bool jumpKeyLetGo = false;
-
 
     void Start()
     {
@@ -30,27 +25,15 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-
         //Movement
         float x = Input.GetAxisRaw("Horizontal");
         vel = new Vector2(x * speed, rbody.velocity.y);
 
-        //Dynamic jump power
-        if (Input.GetKey(KeyCode.Space) && jumpPower < FINAL_JUMP_POWER && !jumpKeyLetGo)
+        //Start the jump
+        if (Input.GetKey(KeyCode.Space) && isGrounded())
         {
-            vel.y = jumpPower;
-            jumpPower += 0.5f;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            jumpKeyLetGo = true;
-        }
-
-        if (isGrounded())
-        {
-            jumpPower = STARTING_JUMP_POWER;
-            jumpKeyLetGo = false;
+            
+            rbody.AddForce(Vector3.up * 50 * jumpPower);
         }
 
         rbody.velocity = vel;
