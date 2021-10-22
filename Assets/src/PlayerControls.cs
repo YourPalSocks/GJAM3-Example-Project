@@ -6,12 +6,13 @@ public class PlayerControls : MonoBehaviour
 {
     private Rigidbody2D rbody;
     private SpriteRenderer spr;
-    private Vector3 vel;
+    private Vector2 vel;
     private Collider2D col;
 
-    [SerializeField] private int speed = 5;
-    [SerializeField]private float jumpPower = 5;
+    public int speed = 5;
+    public float jumpPower = 5;
     private float distToGround;
+
 
     void Start()
     {
