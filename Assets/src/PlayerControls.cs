@@ -12,6 +12,8 @@ public class PlayerControls : MonoBehaviour
     public int speed = 5;
     public float jumpPower = 5;
     private float distToGround;
+    public bool canMove = true;
+
 
 
     void Start()
@@ -26,9 +28,28 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
+        //Disable Movement if needed
+        if (!canMove)
+        {
+            rbody.velocity = Vector2.zero;
+            return;
+        }
+
         //Movement
         float x = Input.GetAxisRaw("Horizontal");
+
+        //Sprinting
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 8;
+        }
+        else 
+        {
+            speed = 5;
+        }
+
         vel = new Vector2(x * speed, rbody.velocity.y);
+
 
         //Start the jump
         if (Input.GetKey(KeyCode.Space) && isGrounded())

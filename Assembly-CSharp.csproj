@@ -35,6 +35,26 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.11</UnityProjectGeneratorVersion>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
+    <UnityVersion>2021.1.24f1</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Assets\src\PlayerControls.cs" />
+    <Compile Include="Assets\src\KillPlane.cs" />
+    <Compile Include="Assets\src\GameManager.cs" />
+    <Compile Include="Assets\src\WinLevel.cs" />
+  </ItemGroup>
+=======
+>>>>>>> 933c4ff33f4502213dcd6d5ae0735a9372966287
+>>>>>>> Stashed changes
   <ItemGroup>
      <Compile Include="Assets\src\PlayerControls.cs" />
     <Reference Include="UnityEngine">
